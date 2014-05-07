@@ -9,6 +9,9 @@ describe HyperMQ::Client do
     stub_request(:get, "http://hypermq.yourdomain.com/q/myqueue/c35e12a0-d502-11e3-a3db-7831c1b71f12").to_return(File.read('spec/support/myqueue-next.json'))
     stub_request(:post, "http://hypermq.yourdomain.com/ack/myqueue/test-client").to_return(File.read('spec/support/myqueue-ack.json'))
     stub_request(:get, "http://hypermq.yourdomain.com/ack/myqueue/test-client").to_return(File.read('spec/support/myqueue-last-seen.json'))
+    stub_request(:post, "http://hypermq.yourdomain.com/q/myqueue").
+      with(:body => "{\"producer\":\"test-client\",\"body\":{\"some\":\"data\"}}").
+      to_return(File.read('spec/support/myqueue-create.json'))
   end
 
 
@@ -46,6 +49,12 @@ describe HyperMQ::Client do
   describe "#last_seen" do
     it 'returns the id of the last acknowledged message' do
       expect(client.last_seen('myqueue')).to eq 'a35e12a0-d502-11e3-a3db-831c1b71f112'
+    end
+  end
+
+  describe "#push" do
+    it 'pushes a message onto the queue' do
+      expect(client.push('myqueue', some: 'data')).to be_true
     end
   end
 end
