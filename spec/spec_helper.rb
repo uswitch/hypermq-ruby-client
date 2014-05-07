@@ -1,6 +1,6 @@
 require 'rspec'
 require 'simplecov'
-require 'coveralls'
+require 'webmock/rspec'
 
 SimpleCov.start do
   add_filter 'spec'
@@ -12,4 +12,3 @@ RSpec.configure do |c|
   c.order = :rand
   c.mock_with :mocha
 end
-

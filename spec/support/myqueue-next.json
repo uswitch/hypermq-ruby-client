@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.4
+Date: Wed, 07 May 2014 14:35:41 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 347
+Connection: keep-alive
+Vary: Accept
+Last-Modified: Wed, 07 May 2014 14:35:41 GMT
+ETag: "dd441550-d5f4-11e3-b17b-7831c1b71f12"
+
+{"queue":"myqueue","_embedded":{"message":[{"created":1399473341221,"body":{"msg":1},"producer":"myproducer","queue":"myqueue","id":"dd441550-d5f4-11e3-b17b-7831c1b71f12"}]},"_links":{"prev":{"href":"http:\/\/hypermq.yourdomain.com\/q\/myqueue"},"self":{"href":"http:\/\/hypermq.yourdomain.com\/q\/myqueue\/c35e12a0-d502-11e3-a3db-7831c1b71f12"}}}

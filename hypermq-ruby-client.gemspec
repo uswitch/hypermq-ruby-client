@@ -12,9 +12,12 @@ Gem::Specification.new do |s|
   s.homepage      = 'http://github.com/uswitch/hypermq-ruby-client'
   s.license       = 'MIT'
 
+  s.add_dependency "id"
   s.add_dependency "faraday"
+  s.add_dependency "yajl-ruby"
 
   s.add_development_dependency "rspec"
+  s.add_development_dependency "webmock"
   s.add_development_dependency "mocha"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "coveralls"

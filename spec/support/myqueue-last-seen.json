@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.4
+Date: Wed, 07 May 2014 14:58:27 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 50
+Connection: keep-alive
+Vary: Accept
+
+{"message":"a35e12a0-d502-11e3-a3db-831c1b71f112"}
